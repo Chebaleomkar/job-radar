@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "exa": { "url": "https://mcp.exa.ai/mcp" },
+    "parallel": { "url": "https://search.parallel.ai/mcp" },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" }
+    },
+    "google": {
+      "command": "uvx",
+      "args": ["workspace-mcp", "--permissions", "gmail:drafts"],
+      "env": {
+        "GOOGLE_OAUTH_CLIENT_ID": "${GOOGLE_OAUTH_CLIENT_ID}",
+        "GOOGLE_OAUTH_CLIENT_SECRET": "${GOOGLE_OAUTH_CLIENT_SECRET}"
+      }
+    }
+  }
+}

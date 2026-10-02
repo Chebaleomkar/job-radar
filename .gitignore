@@ -1,0 +1,27 @@
+# Your job hunt is personal data. These stay on your machine.
+profile/*
+!profile/TEMPLATE.md
+!profile/facts.TEMPLATE.md
+leads.md
+companies/*
+!companies/.gitkeep
+outreach/queue/*
+!outreach/queue/.gitkeep
+outreach/watchlist.md
+resume/*
+!resume/.gitkeep
+scratch/
+
+# Secrets and local agent config
+.env
+.env.*
+!.env.example
+/.mcp.json
+/opencode.json
+.codex/
+.gemini/settings.json
+logs/
+
+__pycache__/
+*.pyc
+.DS_Store

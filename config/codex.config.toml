@@ -1,0 +1,24 @@
+# Copy to .codex/config.toml in this folder (Codex loads it for trusted projects) or ~/.codex/config.toml.
+
+[mcp_servers.exa]
+url = "https://mcp.exa.ai/mcp"
+# bearer_token_env_var = "EXA_API_KEY"   # uncomment if you add an Exa key
+
+[mcp_servers.parallel]
+url = "https://search.parallel.ai/mcp"
+
+[mcp_servers.firecrawl]
+command = "npx"
+args = ["-y", "firecrawl-mcp"]
+env_vars = ["FIRECRAWL_API_KEY"]
+
+[mcp_servers.google]
+command = "uvx"
+args = ["workspace-mcp", "--permissions", "gmail:drafts"]
+env_vars = ["GOOGLE_OAUTH_CLIENT_ID", "GOOGLE_OAUTH_CLIENT_SECRET"]
+
+# Headless runs (codex exec --sandbox workspace-write) may block network for shell commands,
+# which breaks tools/freesearch.py, tools/xpost.py and nslookup. MCP tools are unaffected.
+# If that happens, allow network in the workspace-write sandbox:
+# [sandbox_workspace_write]
+# network_access = true
